@@ -1,7 +1,7 @@
 package Model;
 
 public class Cart {
-	private int CustomerID, PID, CID, PQuantity, PPrice;
+	private int CustomerID, PID, CID, PQuantity, PPrice, TotalPrice;
 	private String PName, Payment_Status;
 
 	public int getCustomerID() {
@@ -44,6 +44,14 @@ public class Cart {
 		PPrice = pPrice;
 	}
 
+	public int getTotalPrice() {
+		return TotalPrice;
+	}
+
+	public void setTotalPrice(int totalPrice) {
+		TotalPrice = totalPrice;
+	}
+
 	public String getPName() {
 		return PName;
 	}
@@ -63,6 +71,8 @@ public class Cart {
 	@Override
 	public String toString() {
 		return "Cart [CustomerID=" + CustomerID + ", PID=" + PID + ", CID=" + CID + ", PQuantity=" + PQuantity
-				+ ", PPrice=" + PPrice + ", PName=" + PName + ", Payment_Status=" + Payment_Status + "]";
+				+ ", PPrice=" + PPrice + ", TotalPrice=" + TotalPrice + ", PName=" + PName + ", Payment_Status="
+				+ Payment_Status + "]";
 	}
+
 }

@@ -65,16 +65,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="container-fluid px-lg-5">
                 <!-- nav -->
                 <nav class="py-4">
-                    <div id="logo">
-                        <h1> <a href="Index.jsp"><span class="fa fa-bold" aria-hidden="true"></span>ootie</a></h1>
-                    </div>
+					<div id="logo">
+						<h1>
+							<a href="Customer-Home.jsp"><span class="fa fa-bold"
+								aria-hidden="true"></span>ootie</a>
+						</h1>
+					</div>
 
-                    <label for="drop" class="toggle">Menu</label>
-                    <input type="checkbox" id="drop" />
-                   <ul class="menu mt-2">
+					<label for="drop" class="toggle">Menu</label> <input
+						type="checkbox" id="drop" />
+					<ul class="menu mt-2">
 						<li class="active"><a href="Customer-Home.jsp">Home</a></li>
-						<li><a href="#">Offer Zone</a></li>
-						<li><a href="#">Coupons</a></li>
 						<li>
 							<!-- First Tier Drop Down --> <label for="drop-2" class="toggle">Drop
 								Down <span class="fa fa-angle-down" aria-hidden="true"></span>
@@ -87,6 +88,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="Customer-Logout.jsp">Logout</a></li>
 							</ul>
 						</li>
+						<li><a href="#">Offer Zone</a></li>
+						<li><a href="#">Coupons</a></li>
 						
 						<%List<Cart> list1 = CartDao.getCartByCustomerID(c.getID()); %>
 						<li><a href="Customer-Cart.jsp">View Cart (<%=list1.size() %>) </a></li>
@@ -94,7 +97,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<%List<Wishlist> list2 = WishlistDao.getWishlistByCustomerID(c.getID()); %>
 						<li><a href="Customer-Wishlist.jsp">Wishlist (<%=list2.size() %>) </a></li>
 					</ul>
-                </nav>
+				</nav>
                 <!-- //nav -->
             </div>
         </header>
@@ -132,7 +135,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <h5>&#8377; <%=p.getPPrice() %><br><a href="#">click for offer</a></h5>
                             <div class="available mt-3">
                                 
-                                <form action="CartController" method="post" class="w3layouts-newsletter">
+                                <form action="CartController" method="get" class="w3layouts-newsletter">
 									<input type="hidden" name="PID" value=<%=p.getPID() %>>
                                 	<input type="hidden" name="CustomerID" value=<%=c.getID() %>>                                
                                     <button class="btn1" name="action" value="Add to Cart">Add to Cart</button>

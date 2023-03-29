@@ -68,7 +68,7 @@
 				<nav class="py-4">
 					<div id="logo">
 						<h1>
-							<a href="index.jsp"><span class="fa fa-bold"
+							<a href="Customer-Home.jsp"><span class="fa fa-bold"
 								aria-hidden="true"></span>ootie</a>
 						</h1>
 					</div>
@@ -77,8 +77,6 @@
 						type="checkbox" id="drop" />
 					<ul class="menu mt-2">
 						<li><a href="Customer-Home.jsp">Home</a></li>
-						<li><a href="#">Offer Zone</a></li>
-						<li><a href="#">Coupons</a></li>
 						<li>
 							<!-- First Tier Drop Down --> <label for="drop-2" class="toggle">Drop
 								Down <span class="fa fa-angle-down" aria-hidden="true"></span>
@@ -91,6 +89,8 @@
 								<li><a href="Customer-Logout.jsp">Logout</a></li>
 							</ul>
 						</li>
+						<li><a href="#">Offer Zone</a></li>
+						<li><a href="#">Coupons</a></li>
 						
 						<%List<Cart> list1 = CartDao.getCartByCustomerID(c.getID()); %>
 						<li><a href="Customer-Cart.jsp">View Cart (<%=list1.size() %>) </a></li>

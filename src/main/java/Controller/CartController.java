@@ -22,10 +22,7 @@ public class CartController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+		
 		String action = request.getParameter("action");
 
 		if (action.equalsIgnoreCase("Add to Cart")) {
@@ -37,10 +34,31 @@ public class CartController extends HttpServlet {
 			c.setPName(p.getPName());
 			c.setPPrice(p.getPPrice());
 			c.setPQuantity(1);
+			c.setTotalPrice(p.getPPrice());
 			c.setPayment_Status("Pending");
 
 			CartDao.InsertCart(c);
 			response.sendRedirect("Customer-Home.jsp");
 		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		int CID = Integer.parseInt(request.getParameter("CID"));
+		int PQuantity = Integer.parseInt(request.getParameter("PQuantity"));
+		System.out.println(CID +""+PQuantity);
+		
+		Cart c= CartDao.getCartByCID(CID);
+		Product p = ProductDao.getProductByPID(c.getPID());
+		
+		int Total = PQuantity*c.getPPrice();
+		Cart c1 = new Cart();
+		c1.setCID(CID);
+		c1.setPQuantity(PQuantity);
+		c1.setTotalPrice(Total);
+		
+		CartDao.updateCart(c1);
+		response.sendRedirect("Customer-Cart.jsp");
 	}
 }
