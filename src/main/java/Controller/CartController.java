@@ -40,7 +40,7 @@ public class CartController extends HttpServlet {
 			CartDao.InsertCart(c);
 			response.sendRedirect("Customer-Home.jsp");
 		}
-	}
+	}                                                                  
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
