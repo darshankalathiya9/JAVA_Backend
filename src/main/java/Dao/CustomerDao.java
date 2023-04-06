@@ -3,12 +3,14 @@ package Dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import Connection.DBConnection;
 import Model.Customer;
 
 public class CustomerDao {
-	public static void InsertSeller(Customer c) {
+	public static void insertCustomer(Customer c) {
 		try {
 			Connection connection = DBConnection.createConnection();
 			String sql = "insert into customer (Name, Contact, Address, Email, Password) values (?,?,?,?,?)";
@@ -28,7 +30,7 @@ public class CustomerDao {
 		}
 	}
 
-	public static Customer LoginSeller(Customer c) {
+	public static Customer loginCustomer(Customer c) {
 		Customer c1 = null;
 		try {
 			Connection connection = DBConnection.createConnection();
@@ -39,6 +41,31 @@ public class CustomerDao {
 			pst.setString(2, c.getPassword());
 
 			ResultSet rs = pst.executeQuery();
+			if (rs.next()) {
+				c1 = new Customer();
+				c1.setID(rs.getInt("ID"));
+				c1.setName(rs.getString("Name"));
+				c1.setContact(rs.getLong("Contact"));
+				c1.setAddress(rs.getString("Address"));
+				c1.setEmail(rs.getString("Email"));
+				c1.setPassword(rs.getString("Password"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return c1;
+	}
+
+	public static Customer getCustomerByID(int ID) {
+		Customer c1 = null;
+		try {
+			Connection connection = DBConnection.createConnection();
+			String sql = "select * from customer where ID=?";
+			PreparedStatement pst = connection.prepareStatement(sql);
+
+			pst.setInt(1, ID);
+			ResultSet rs = pst.executeQuery();
+
 			if (rs.next()) {
 				c1 = new Customer();
 				c1.setID(rs.getInt("ID"));
@@ -144,4 +171,44 @@ public class CustomerDao {
 			e.printStackTrace();
 		}
 	}
+
+	public static List<Customer> getAllCustomers() {
+		List<Customer> list = new ArrayList<Customer>();
+		try {
+			Connection connection = DBConnection.createConnection();
+			String sql = "select * from customer";
+			PreparedStatement pst = connection.prepareStatement(sql);
+
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+				Customer c1 = new Customer();
+				c1 = new Customer();
+				c1.setID(rs.getInt("ID"));
+				c1.setName(rs.getString("Name"));
+				c1.setContact(rs.getLong("Contact"));
+				c1.setAddress(rs.getString("Address"));
+				c1.setEmail(rs.getString("Email"));
+				c1.setPassword(rs.getString("Password"));
+				list.add(c1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	public static void deleteCustomer(int ID) {
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "delete from Customer where id = ?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+
+			pst.setInt(1, ID);
+			pst.executeUpdate();
+			System.out.println("Data Deleted by Admin Succesfully.");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 }

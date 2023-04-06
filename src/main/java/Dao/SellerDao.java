@@ -3,6 +3,8 @@ package Dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import Connection.DBConnection;
 import Model.Seller;
@@ -53,6 +55,31 @@ public class SellerDao {
 		return s1;
 	}
 
+	public static Seller getSellerByID(int ID) {
+		Seller s1 = null;
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from seller where id = ?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			
+			pst.setInt(1, ID);
+			ResultSet rs = pst.executeQuery();
+			
+			if (rs.next()) {
+				s1 = new Seller();
+				s1.setID(rs.getInt("ID"));
+				s1.setName(rs.getString("Name"));
+				s1.setContact(rs.getLong("Contact"));
+				s1.setAddress(rs.getString("Address"));
+				s1.setEmail(rs.getString("Email"));
+				s1.setPassword(rs.getString("Password"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return s1;
+	}
+	
 	public static void updateProfile(Seller s) {
 		try {
 			Connection connection = DBConnection.createConnection();
@@ -141,4 +168,43 @@ public class SellerDao {
 			e.printStackTrace();
 		}
 	}
+	
+	public static List<Seller> getAllSellers(){
+		List<Seller> list = new ArrayList<Seller>();
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from seller";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+				Seller s1 = new Seller();
+				s1.setID(rs.getInt("ID"));
+				s1.setName(rs.getString("Name"));
+				s1.setContact(rs.getLong("Contact"));
+				s1.setAddress(rs.getString("Address"));
+				s1.setEmail(rs.getString("Email"));
+				s1.setPassword(rs.getString("Password"));
+				list.add(s1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public static void deleteSeller(int ID) {
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "delete from seller where id = ?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			
+			pst.setInt(1, ID);
+			pst.executeUpdate();
+			System.out.println("Data Deleted by Admin Succesfully.");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 }

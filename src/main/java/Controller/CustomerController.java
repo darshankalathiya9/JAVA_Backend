@@ -41,7 +41,7 @@ public class CustomerController extends HttpServlet {
 			c.setEmail(request.getParameter("Email"));
 			c.setPassword(request.getParameter("Password"));
 			
-			CustomerDao.InsertSeller(c);
+			CustomerDao.insertCustomer(c);
 			
 			request.setAttribute("msg", "Account Registered Succesfully.");
 			request.getRequestDispatcher("Customer-Login.jsp").forward(request, response);
@@ -51,7 +51,7 @@ public class CustomerController extends HttpServlet {
 			Customer c = new Customer();
 			c.setEmail(request.getParameter("Email"));
 			c.setPassword(request.getParameter("Password"));
-			Customer c1 = CustomerDao.LoginSeller(c);
+			Customer c1 = CustomerDao.loginCustomer(c);
 			if (c1 == null) {
 				request.setAttribute("msg", "Password is Incorrect.");
 				request.getRequestDispatcher("Customer-Login.jsp").forward(request, response);
@@ -148,6 +148,17 @@ public class CustomerController extends HttpServlet {
 				request.getRequestDispatcher("Customer-New-Password.jsp").forward(request, response);
 			}
 		}
+		
+		else if (action.equalsIgnoreCase("Admin Update")) {
+			Customer c = new Customer();
+			c.setID(Integer.parseInt(request.getParameter("ID")));
+			c.setName(request.getParameter("Name"));
+			c.setContact(Long.parseLong(request.getParameter("Contact")));
+			c.setAddress(request.getParameter("Address"));
+			c.setEmail(request.getParameter("Email"));
 
+			CustomerDao.updateProfile(c);
+			response.sendRedirect("Admin-Customer-List.jsp");
+		}
 	}
 }
