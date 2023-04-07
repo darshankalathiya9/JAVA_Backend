@@ -1,3 +1,5 @@
+<%@page import="Dao.ProductDao"%>
+<%@page import="Model.Product"%>
 <%@page import="Model.Seller"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -43,10 +45,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 
 <body>
-
-<% 
-Seller s = null; 
-	if(session.getAttribute("data") != null){
+<% Seller s = null;
+	if(session.getAttribute("data")!=null){
 		s = (Seller)session.getAttribute("data");
 	}
 	else{
@@ -60,7 +60,7 @@ Seller s = null;
         <header class="header">
             <div class="container-fluid px-lg-5">
                 <!-- nav -->
-                <nav class="py-4">
+               <nav class="py-4">
                     <div id="logo">
                         <h1> <a href="Index.jsp"><span class="fa fa-bold" aria-hidden="true"></span>ootie</a></h1>
                     </div>
@@ -75,7 +75,7 @@ Seller s = null;
                             <a href="#">Products<span class="fa fa-angle-down" aria-hidden="true"></span></a>
                             <input type="checkbox" id="drop-2" />
                             <ul>
-                                <li><a href="Seller-Upload-Product.jsp">Upload Product</a></li>
+                                <li class="active"><a href="Seller-Upload-Product.jsp">Upload Product</a></li>
                                 <li><a href="Seller-Manage-Product.jsp">Manage Product</a></li>
                             </ul>
                         </li>
@@ -85,7 +85,7 @@ Seller s = null;
                             </label> <a href="#"><%=s.getName() %><span class="fa fa-angle-down" aria-hidden="true"></span></a>
                             <input type="checkbox" id="drop-2" />
                             <ul>
-                                <li class="active"><a href="Seller-Profile.jsp">Profile</a></li>
+                                <li><a href="Seller-Profile.jsp">Profile</a></li>
                                 <li><a href="Seller-Change-Password.jsp">Change Password</a></li>
                                 <li><a href="Seller-Logout.jsp">Logout</a></li>
                             </ul>
@@ -102,15 +102,25 @@ Seller s = null;
     <!-- banner -->
     <section class="ab-info-main py-5">
         <div class="container py-3">
-            <h3 class="tittle text-center"><span class="sub-tittle">Find Us</span>Your Profile</h3>
+            <h3 class="tittle text-center"><span class="sub-tittle">Find Us</span>Seller Upload Product</h3>
             <div class="row contact-main-info mt-5">
                 <div class="col-md-12 contact-right-content">
-                    <form action="SellerController" method="post">
-                    	<input type="hidden" name="ID" value="<%=s.getID()%>">
-                        <input type="text" name="Name" value="<%=s.getName()%>">
-                        <input type="tel" name="Contact" value="<%=s.getContact()%>">
-                        <input type="text" name="Address" value="<%=s.getAddress()%>">
-                        <input type="email" class="email" name="Email" value="<%=s.getEmail()%>">
+                
+                 <%int ID = Integer.parseInt(request.getParameter("PID")); %>
+                 <%Product p = ProductDao.getProductByPID(ID); %>
+                    
+                    <form action="ProductController" method="post" enctype="multipart/form-data">
+                    	<input type="hidden" name="SID" value="<%=s.getID()%>">
+                    	<h2 class="tittle"><label class="sub-tittle">Upload Product Image</label></h2>
+                    	<input type="file" name="Image"><br><br>
+						<h2 class="tittle"><label class="sub-tittle">Enter Product Name</label></h2>
+                        <input type="text" name="PName" value="<%=p.getPName()%>"><br><br>
+                        <h2 class="tittle"><label class="sub-tittle">Enter Product Price</label></h2>
+                        <input type="text" name="PPrice" value="<%=p.getPPrice()%>"><br><br>
+                        <h2 class="tittle"><label class="sub-tittle">Enter Product Category</label></h2>
+                        <input type="text" name="PCategory" value="<%=p.getPCategory()%>"><br><br>
+                        <h2 class="tittle"><label class="sub-tittle">Enter Product Desciption</label></h2>
+                        <input type="text" name="PDesc" value="<%=p.getPDesc()%>"><br><br>
                         <div class="text-center">
                             <input type="submit" value="Update" name="action">
                         </div>

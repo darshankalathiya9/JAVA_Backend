@@ -109,4 +109,18 @@ public class ProductDao {
 		return p;
 	}
 
+	public static void removeProductBySeller(int PID) {
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "delete from product where PID = ?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			
+			pst.setInt(1, PID);
+			pst.executeUpdate();
+			System.out.println("Product Delete by Seller Succesfully.");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 }

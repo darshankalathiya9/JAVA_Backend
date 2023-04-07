@@ -105,155 +105,38 @@
 
     </div>
     <!--//main-content-->
-    <!--/ab -->
-    <section class="about py-md-5 py-5">
-        <div class="container-fluid">
-            <div class="feature-grids row px-3">
-                <div class="col-lg-3 gd-bottom">
-                    <div class="bottom-gd row">
-                        <div class="icon-gd col-md-3 text-center"><span class="fa fa-truck" aria-hidden="true"></span></div>
-                        <div class="icon-gd-info col-md-9">
-                            <h3 class="mb-2">FREE SHIPPING</h3>
-                            <p>On all order over $2000</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 gd-bottom">
-                    <div class="bottom-gd row bottom-gd2-active">
-                        <div class="icon-gd col-md-3 text-center"><span class="fa fa-bullhorn" aria-hidden="true"></span></div>
-                        <div class="icon-gd-info col-md-9">
-                            <h3 class="mb-2">FREE RETURN</h3>
-                            <p>On 1st exchange in 30 days</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 gd-bottom">
-                    <div class="bottom-gd row">
-                        <div class="icon-gd col-md-3 text-center"> <span class="fa fa-gift" aria-hidden="true"></span></div>
-
-                        <div class="icon-gd-info col-md-9">
-                            <h3 class="mb-2">MEMBER DISCOUNT</h3>
-                            <p>Register & save up to $29%</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-lg-3 gd-bottom">
-                    <div class="bottom-gd row">
-                        <div class="icon-gd col-md-3 text-center"> <span class="fa fa-usd" aria-hidden="true"></span></div>
-                        <div class="icon-gd-info col-md-9">
-                            <h3 class="mb-2">PREMIUM SUPPORT</h3>
-                            <p>Support 24 hours per day</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- //ab -->
-    <!--/ab -->
-    <section class="about py-5">
-        <div class="container pb-lg-3">
-            <h3 class="tittle text-center">New Arrivals</h3>
-            <div class="row">
-            <%List<Product> list = ProductDao.getProductBySID(s.getID()); %>
-            <%for(Product p : list){ %>
-            
-            
-                <div class="col-md-4 product-men">
-                    <div class="product-shoe-info shoe text-center">
-                        <div class="men-thumb-item">
-                            <img src="Image/<%=p.getImage() %>" height="100px" width="100px" class="img-fluid" alt="">
-                            <span class="product-new-top">New</span>
-                        </div>
-                        <div class="item-info-product">
-                            <h4>
-                                <a href="shop-single.html"><%=p.getPName() %> </a>
-                            </h4>
-
-                            <div class="product_price">
-                                <div class="grid-price">
-                                    <span class="money"><%=p.getPPrice() %></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               <%} %>
-                </div>
-            </div>
-    </section>
-    <!-- //ab -->
-    <!--/testimonials-->
-    <section class="testimonials py-5">
-        <div class="container">
-            <div class="test-info text-center">
-                <h3 class="my-md-2 my-3">Jenifer Burns</h3>
-
-                <ul class="list-unstyled w3layouts-icons clients">
-                    <li>
-                        <a href="#">
-                            <span class="fa fa-star"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="fa fa-star"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="fa fa-star"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="fa fa-star-half-o"></span>
-                        </a>
-                    </li>
-                </ul>
-                <p><span class="fa fa-quote-left"></span> Lorem Ipsum has been the industry's standard since the 1500s. Praesent ullamcorper dui turpis.Nulla pellentesque mi non laoreet eleifend. Integer porttitor mollisar lorem, at molestie arcu pulvinar ut. <span class="fa fa-quote-right"></span></p>
-
-            </div>
-        </div>
-    </section>
-    <!--//testimonials-->
-    <!--/ab -->
-    <section class="about py-5">
-        <div class="container pb-lg-3">
-            <h3 class="tittle text-center">Popular Products</h3>
-            <div class="row">
-                <div class="col-md-6 latest-left">
-                    <div class="product-shoe-info shoe text-center">
-                        <img src="images/img1.jpg" class="img-fluid" alt="">
-                        <div class="shop-now"><a href="shop.html" class="btn">Shop Now</a></div>
-                    </div>
-                </div>
-                <div class="col-md-6 latest-right">
-                    <div class="row latest-grids">
-                        <div class="latest-grid1 product-men col-12">
-                            <div class="product-shoe-info shoe text-center">
-                                <div class="men-thumb-item">
-                                    <img src="images/img2.jpg" class="img-fluid" alt="">
-                                    <div class="shop-now"><a href="shop.html" class="btn">Shop Now</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="latest-grid2 product-men col-12 mt-lg-4">
-                            <div class="product-shoe-info shoe text-center">
-                                <div class="men-thumb-item">
-                                    <img src="images/img3.jpg" class="img-fluid" alt="">
-                                    <div class="shop-now"><a href="shop.html" class="btn">Shop Now</a></div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- //ab -->
+	<br><br>    
+    
+    <div class="container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Product Image</th>
+					<th scope="col">Product Name</th>
+					<th scope="col">Product Price</th>
+					<th scope="col">Edit</th>
+					<th scope="col">Delete</th>				
+				</tr>
+			</thead>
+			<tbody>
+				<%List<Product> list = ProductDao.getProductBySID(s.getID()); %>
+            	<%for(Product p : list){ %>
+				
+					<tr>
+						<td><img alt="" src="Image/<%=p.getImage()%>" height="100px" width="100px"></td>
+						<td><%=p.getPName() %></td>
+						<td><%=p.getPPrice() %></td>
+						<td><a href="Seller-Product-Edit.jsp?PID=<%=p.getPID()%>">Edit</a></td>
+						<td><a href="Seller-Product-Delete.jsp?PID=<%=p.getPID()%>">Delete</a></td>
+					</tr>
+					
+				<%} %>	
+			</tbody>
+		</table>
+	</div>
+    <br><br>
+    
+    
     <!-- brands -->
     <section class="brands py-5" id="brands">
         <div class="container py-lg-0">

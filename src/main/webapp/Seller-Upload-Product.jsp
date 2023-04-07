@@ -105,11 +105,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="col-md-12 contact-right-content">
                     <form action="ProductController" method="post" enctype="multipart/form-data">
                     	<input type="hidden" name="SID" value="<%=s.getID()%>">
+                    	<h2 class="tittle"><label class="sub-tittle">Upload Product Image</label></h2>
                     	<input type="file" name="Image"><br><br>
-                        <input type="text" name="PName" placeholder="Product Name" required="">
-                        <input type="text" name="PPrice" placeholder="Product Price" required="">
-                        <input type="text" name="PCategory" placeholder="Product Category" required="">
-                        <input type="text" name="PDesc" placeholder="Product Description" required="">
+						<h2 class="tittle"><label class="sub-tittle">Enter Product Name</label></h2>
+                        <input type="text" name="PName" placeholder="Product Name" required=""><br><br>
+                        <h2 class="tittle"><label class="sub-tittle">Enter Product Price</label></h2>
+                        <input type="text" name="PPrice" placeholder="Product Price" required=""><br><br>
+                        <h2 class="tittle"><label class="sub-tittle">Enter Product Category</label></h2>
+                        <input type="text" name="PCategory" placeholder="Product Category" required=""><br><br>
+                        <h2 class="tittle"><label class="sub-tittle">Enter Product Desciption</label></h2>
+                        <input type="text" name="PDesc" placeholder="Product Description" required=""><br><br>
                         <div class="text-center">
                             <input type="submit" value="Upload" name="action">
                         </div>
