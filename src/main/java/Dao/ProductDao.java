@@ -123,4 +123,23 @@ public class ProductDao {
 		}
 	}
 	
+	public static void updateProduct(Product p) {
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "update product set Image=?, PName=?, PPrice=?, PCategory=?, PDesc=? where PID=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			
+			pst.setString(1, p.getImage());
+			pst.setString(2, p.getPName());
+			pst.setInt(3, p.getPPrice());
+			pst.setString(4, p.getPCategory());
+			pst.setString(5, p.getPDesc());
+			pst.setInt(6, p.getPID());
+			
+			pst.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 }

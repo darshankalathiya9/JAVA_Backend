@@ -99,7 +99,7 @@ public class ProductController extends HttpServlet {
 			}
 
 			Product p = new Product();
-			p.setSID(Integer.parseInt(request.getParameter("SID")));
+			p.setPID(Integer.parseInt(request.getParameter("PID")));
 			p.setImage(fileName);
 			p.setPName(request.getParameter("PName"));
 			p.setPPrice(Integer.parseInt(request.getParameter("PPrice")));
@@ -107,7 +107,7 @@ public class ProductController extends HttpServlet {
 			p.setPDesc(request.getParameter("PDesc"));
 			System.out.println(p);
 			
-			ProductDao.uploadProduct(p);
+			ProductDao.updateProduct(p);
 			System.out.println("Product Updated succesfully.");
 			response.sendRedirect("Seller-Manage-Product.jsp");
 		}

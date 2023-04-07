@@ -110,7 +110,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                  <%Product p = ProductDao.getProductByPID(ID); %>
                     
                     <form action="ProductController" method="post" enctype="multipart/form-data">
-                    	<input type="hidden" name="SID" value="<%=s.getID()%>">
+                    	<input type="hidden" name="PID" value="<%=p.getPID()%>">
                     	<h2 class="tittle"><label class="sub-tittle">Upload Product Image</label></h2>
                     	<input type="file" name="Image"><br><br>
 						<h2 class="tittle"><label class="sub-tittle">Enter Product Name</label></h2>
