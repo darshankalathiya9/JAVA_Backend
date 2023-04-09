@@ -32,7 +32,7 @@ public class AdminController extends HttpServlet {
 			String Password1 = request.getParameter("Password");
 			
 			if (Email1.equals(Email) && Password1.equals(Password)) {
-				request.setAttribute("Email", Email);
+				request.setAttribute("Email", Email1);
 				request.getRequestDispatcher("Admin-Home.jsp").forward(request, response);
 			} else {
 				request.setAttribute("msg", "Password is Incorrect.");

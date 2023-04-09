@@ -24,7 +24,6 @@ public class CustomerDao {
 			pst.executeUpdate();
 
 			System.out.println("Data Inserted Succesfully.");
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -92,10 +91,8 @@ public class CustomerDao {
 			pst.setString(3, c.getAddress());
 			pst.setString(4, c.getEmail());
 			pst.setInt(5, c.getID());
+
 			pst.executeUpdate();
-
-			System.out.println("Data Updated Succesfully.");
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

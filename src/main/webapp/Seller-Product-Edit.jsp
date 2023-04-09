@@ -102,7 +102,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- banner -->
     <section class="ab-info-main py-5">
         <div class="container py-3">
-            <h3 class="tittle text-center"><span class="sub-tittle">Find Us</span>Seller Upload Product</h3>
+            <h3 class="tittle text-center"><span class="sub-tittle">Find Us</span>Seller Update Product</h3>
             <div class="row contact-main-info mt-5">
                 <div class="col-md-12 contact-right-content">
                 
@@ -119,7 +119,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <input type="text" name="PPrice" value="<%=p.getPPrice()%>"><br><br>
                         <h2 class="tittle"><label class="sub-tittle">Enter Product Category</label></h2>
                         <input type="text" name="PCategory" value="<%=p.getPCategory()%>"><br><br>
-                        <h2 class="tittle"><label class="sub-tittle">Enter Product Desciption</label></h2>
+                        <h2 class="tittle"><label class="sub-tittle">Enter Product Description</label></h2>
                         <input type="text" name="PDesc" value="<%=p.getPDesc()%>"><br><br>
                         <div class="text-center">
                             <input type="submit" value="Update" name="action">

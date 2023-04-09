@@ -93,7 +93,6 @@ public class SellerDao {
 			pst.setInt(5, s.getID());
 
 			pst.executeUpdate();
-			System.out.println("Data Updated Succesfully.");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

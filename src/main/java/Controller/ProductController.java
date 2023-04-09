@@ -108,9 +108,8 @@ public class ProductController extends HttpServlet {
 			System.out.println(p);
 			
 			ProductDao.updateProduct(p);
-			System.out.println("Product Updated succesfully.");
+			System.out.println("Product Updated Succesfully.");
 			response.sendRedirect("Seller-Manage-Product.jsp");
 		}
-		
 	}
 }

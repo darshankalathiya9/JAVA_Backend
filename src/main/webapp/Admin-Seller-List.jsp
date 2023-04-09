@@ -40,64 +40,63 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 	<div id="wrapper">
 		<!-- Navigation -->
-		<nav class="top1 navbar navbar-default navbar-static-top"
-			role="navigation" style="margin-bottom: 0">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-collapse">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="Admin-Home.jsp">Modern</a>
-			</div>
-
-			<!-- /.navbar-header -->
-
+		<nav class="top1 navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="Admin-Home.jsp">Bootie Ecommerce</a>
+            </div>
+           
+            <!-- /.navbar-header -->
+          
 			<form class="navbar-form navbar-right">
-				<input type="text" class="form-control" value="Search..."
-					onfocus="this.value = '';"
-					onblur="if (this.value == '') {this.value = 'Search...';}">
-			</form>
-			<ul class="nav navbar-nav navbar-right">
-				<%
-				String Email = (String) request.getAttribute("Email");
-				%>
-				<li class="dropdown"><a href="Admin-Home.jsp"
-					class="dropdown-toggle" data-toggle="dropdown"
-					aria-expanded="false"><i class="fa fa-id-badge"></i><span
-						class="badge">
-							<%
-							out.print(Email);
-							%>
-					</span></a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown" aria-expanded="false"><i
-						class="fa fa-comments-o"></i><span class="badge">4</span></a></li>
+              <input type="text" class="form-control" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}">
+            </form>
+            <% String Email = (String) request.getAttribute("Email"); %>
+			<%-- <% out.print(Email); %> --%>
+            
+              <ul class="nav navbar-nav navbar-right">
+			    <li class="dropdown">
+	        		<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="https://i.pinimg.com/originals/5c/89/de/5c89de5b52165f998c117167eb380278.jpg"><span class="badge">9</span></a>
+	      		</li>
 			</ul>
-			<div class="navbar-default sidebar" role="navigation">
-				<div class="sidebar-nav navbar-collapse">
-					<ul class="nav" id="side-menu">
-						<li><a href="Admin-Home.jsp"><i
-								class="fa fa-home fa-fw nav_icon"></i>Dashboard</a></li>
-						<li><a href="Admin-Seller-List.jsp"><i
-								class="fa fa-users nav_icon"></i>Sellers</a></li>
-						<li><a href="Admin-Customer-List.jsp"><i
-								class="fa fa-users nav_icon"></i>Customers</a></li>
-						<li><a href="Admin-Product-List.jsp"><i
-								class="fa fa-shopping-cart nav_icon"></i>Products</a></li>
-						<li><a href="#"><i class="fa fa-envelope nav_icon"></i>Mailbox</a>
-						</li>
-						<li><a href="Admin-Total-Payment-List.jsp"><i
-								class="fa fa-inr nav_icon"></i>Payments</a></li>
-						<li><a href="Admin-Logout.jsp"><i
-								class="fa fa-power-off nav_icon"></i>Logout</a></li>
-					</ul>
-				</div>
-				<!-- /.sidebar-collapse -->
-			</div>
-			<!-- /.navbar-static-side -->
-		</nav>
+			
+			
+			
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="Admin-Home.jsp"><i class="fa fa-home fa-fw nav_icon"></i>Dashboard</a>
+                        </li>
+                        <li class="active">
+                            <a href="Admin-Seller-List.jsp"><i class="fa fa-users nav_icon"></i>Sellers</a>
+                        </li>
+                        <li>
+                            <a href="Admin-Customer-List.jsp"><i class="fa fa-users nav_icon"></i>Customers</a>
+                        </li>
+                        <li>
+                            <a href="Admin-Product-List.jsp"><i class="fa fa-shopping-cart nav_icon"></i>Products</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-envelope nav_icon"></i>Mailbox</a>
+                        </li>
+                         <li>
+                            <a href="Admin-Total-Payment-List.jsp"><i class="fa fa-inr nav_icon"></i>Payments</a>
+                        </li>
+                        <li>
+                            <a href="Admin-Logout.jsp"><i class="fa fa-power-off nav_icon"></i>Logout</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
 
 
 		<div id="page-wrapper">

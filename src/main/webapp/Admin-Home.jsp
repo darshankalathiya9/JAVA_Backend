@@ -48,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="Admin-Home.jsp">Modern</a>
+                <a class="navbar-brand" href="Admin-Home.jsp">Bootie Ecommerce</a>
             </div>
            
             <!-- /.navbar-header -->
@@ -56,19 +56,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<form class="navbar-form navbar-right">
               <input type="text" class="form-control" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}">
             </form>
+            <% String Email = (String) request.getAttribute("Email"); %>
+			<%-- <% out.print(Email); %> --%>
+            
               <ul class="nav navbar-nav navbar-right">
-              	<% String Email = (String) request.getAttribute("Email"); %>
 			    <li class="dropdown">
-	        		<a href="Admin-Home.jsp" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-id-badge"></i><span class="badge"><% out.print(Email); %></span></a>
-	      		</li>
-				<li class="dropdown">
-	        		<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-comments-o"></i><span class="badge">4</span></a>
+	        		<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="https://i.pinimg.com/originals/5c/89/de/5c89de5b52165f998c117167eb380278.jpg"><span class="badge">9</span></a>
 	      		</li>
 			</ul>
+			
+			
+			
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li>
+                        <li class="active">
                             <a href="Admin-Home.jsp"><i class="fa fa-home fa-fw nav_icon"></i>Dashboard</a>
                         </li>
                         <li>
