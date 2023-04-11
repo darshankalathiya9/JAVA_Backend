@@ -68,14 +68,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <li><a href="Customer-Registration.jsp">As Customer</a></li>
                             </ul>
                         </li>
-                        <li class="active">
+                        <li>
                             <!-- First Tier Drop Down -->
                             <label for="drop-2" class="toggle">Drop Down <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
                             <a href="#">login<span class="fa fa-angle-down" aria-hidden="true"></span></a>
                             <input type="checkbox" id="drop-2" />
                             <ul>
                                 <li><a href="Seller-Login.jsp">As Seller</a></li>
-                                <li><a href="Customer-Login.jsp">As Customer</a></li>
+                                <li class="active"><a href="Customer-Login.jsp">As Customer</a></li>
                                 <li><a href="Admin-Login.jsp">As Admin</a></li>
                             </ul>
                         </li>
@@ -126,9 +126,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="row footer-top">
                 <div class="col-lg-4 footer-grid_section_w3layouts">
                     <h2 class="logo-2 mb-lg-4 mb-3">
-                        <a href="index.html"><span class="fa fa-bold" aria-hidden="true"></span>ootie</a>
+                        <a href="Index.jsp"><span class="fa fa-bold" aria-hidden="true"></span>ootie</a>
                     </h2>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p> You can Purchase good Qulaity shoes from here & for Seller, Sell Awesome Products to Customer by this E-Commerce Platform.</p>
                     <h4 class="sub-con-fo ad-info my-4">Catch on Social</h4>
                     <ul class="w3layouts_social_list list-unstyled">
                         <li>
@@ -160,8 +160,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <p>By subscribing to our mailing list you will always get latest news and updates from us.</p>
                         <form action="#" method="post" class="w3layouts-newsletter">
                             <input type="email" name="Email" placeholder="Enter your email..." required="">
-                            <button class="btn1"><span class="fa fa-paper-plane-o" aria-hidden="true"></span></button>
-
+                            <button class="btn1" name="" value=""><span class="fa fa-paper-plane-o" aria-hidden="true"></span></button>
                         </form>
                     </div>
                     <div class="row mt-lg-4 bottom-w3layouts-sec-nav mx-0">
@@ -172,7 +171,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <a href="Index.jsp">Home</a>
                                 </li>
                                 <li class="mt-3">
-                                    <a href="about.html">About Us</a>
+                                    <a href="#">About Us</a>
                                 </li>
                                 <li class="mt-3">
                                     <a href="#">Gallery</a>
@@ -181,7 +180,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     <a href="#">Services</a>
                                 </li>
                                 <li class="mt-3">
-                                    <a href="contact.html">Contact Us</a>
+                                    <a href="#">Contact Us</a>
                                 </li>
                             </ul>
                         </div>
@@ -198,13 +197,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         <a href="#">Delivery & Returns</a>
                                     </li>
                                     <li class="mt-3">
-                                        <a href="#">Waranty</a>
+                                        <a href="#">Warranty</a>
                                     </li>
                                     <li class="mt-3">
                                         <a href="#">Terms & Condition</a>
                                     </li>
                                     <li class="mt-3">
-                                        <a href="#">Privacy Plolicy</a>
+                                        <a href="#">Privacy Policy</a>
                                     </li>
                                 </ul>
                             </div>
@@ -223,7 +222,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 </div>
                                 <div class="footer-address-inf">
                                     <h4 class="ad-info mb-2">Location</h4>
-                                    <p>Somewhere on Earth</p>
+                                    <p>Somewhere in Earth</p>
                                 </div>
                             </div>
                         </div>

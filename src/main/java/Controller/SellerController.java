@@ -33,16 +33,26 @@ public class SellerController extends HttpServlet {
 		String action = request.getParameter("action");
 
 		if (action.equalsIgnoreCase("Register")) {
-			Seller s = new Seller();
-			s.setName(request.getParameter("Name"));
-			s.setContact(Long.parseLong(request.getParameter("Contact")));
-			s.setAddress(request.getParameter("Address"));
-			s.setEmail(request.getParameter("Email"));
-			s.setPassword(request.getParameter("Password"));
-			SellerDao.InsertSeller(s);
 
-			request.setAttribute("msg1", "Account Registered Succesfully.");
-			request.getRequestDispatcher("Seller-Login.jsp").forward(request, response);
+			String Email = request.getParameter("Email");
+			Seller s = SellerDao.checkEmailForRegistration(Email);
+
+			if (Email.equals(s.getEmail())) {
+				request.setAttribute("msg", "Account Already Exist with this Email");
+				request.getRequestDispatcher("Seller-Registration.jsp").forward(request, response);
+			} 
+			else {
+				Seller s1 = new Seller();
+				s1.setName(request.getParameter("Name"));
+				s1.setContact(Long.parseLong(request.getParameter("Contact")));
+				s1.setAddress(request.getParameter("Address"));
+				s1.setEmail(request.getParameter("Email"));
+				s1.setPassword(request.getParameter("Password"));
+
+				SellerDao.InsertSeller(s1);
+				request.setAttribute("msg1", "Account Registered Succesfully.");
+				request.getRequestDispatcher("Seller-Login.jsp").forward(request, response);
+			}
 		}
 
 		else if (action.equalsIgnoreCase("Login")) {
@@ -148,7 +158,7 @@ public class SellerController extends HttpServlet {
 				request.getRequestDispatcher("Seller-New-Password.jsp").forward(request, response);
 			}
 		}
-		
+
 		else if (action.equalsIgnoreCase("Admin Update")) {
 			Seller s = new Seller();
 			s.setID(Integer.parseInt(request.getParameter("ID")));

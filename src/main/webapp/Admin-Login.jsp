@@ -25,9 +25,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body id="login">
   <div class="login-logo">
-    <a href="index.html"><img src="images/logo.png" alt=""/></a>
+    <a href="Index.jsp"><img src="images/logo.png" alt=""/></a>
   </div>
-  <h2 class="form-heading">Login</h2><br><br>
+  <h2 class="form-heading">Bootie E-commerce <br> Admin Login</h2><br><br>
   <h6 class="text-center">
   	<% String msg = (String) request.getAttribute("msg"); %>
   	<% if(msg!=null){ %>
@@ -37,19 +37,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   <div class="app-cam">
 	  <form action="AdminController" method="post">
 		<input type="text" name="Email" class="text" value="E-mail address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail address';}">
-		<input type="password" name="Password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+		<input type="password" name="Password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}"><br><br>
 		<div class="submit">
 			<input type="submit" onclick="myFunction()" value="Login" name="action">
 		</div>
-		<div class="login-social-link">
-          <a href="#" class="facebook">Facebook</a>
-          <a href="#" class="twitter">Twitter</a>
-        </div>
-		<ul class="new">
-			<li class="new_left"><p><a href="#">Forgot Password ?</a></p></li>
-			<li class="new_right"><p class="sign">New here ?<a href="#"> Sign Up</a></p></li>
-			<div class="clearfix"></div>
-		</ul>
 	</form>
   </div>
 </body>

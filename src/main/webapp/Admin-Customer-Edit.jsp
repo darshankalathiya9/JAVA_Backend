@@ -104,9 +104,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<form action="CustomerController" method="post" class="form-horizontal">
 								
 								<div class="form-group">
-									<label for="focusedinput" class="col-sm-2 control-label">ID</label>
+									<label for="disabledinput" class="col-sm-2 control-label">ID</label>
 									<div class="col-sm-8">
-										<input type="text" class="form-control1" id="disabledinput" name="ID" value="<%=c.getID()%>">
+										<input disabled="" type="text" class="form-control1" id="disabledinput" name="ID" value="<%=c.getID()%>">
 									</div>
 								</div>
 								

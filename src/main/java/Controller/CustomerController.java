@@ -34,17 +34,25 @@ public class CustomerController extends HttpServlet {
 		String action = request.getParameter("action");
 
 		if (action.equalsIgnoreCase("Register")) {
-			Customer c = new Customer();
-			c.setName(request.getParameter("Name"));
-			c.setContact(Long.parseLong(request.getParameter("Contact")));
-			c.setAddress(request.getParameter("Address"));
-			c.setEmail(request.getParameter("Email"));
-			c.setPassword(request.getParameter("Password"));
 			
-			CustomerDao.insertCustomer(c);
+			String Email = request.getParameter("Email");
+			Customer c = CustomerDao.checkEmailForRegistration(Email);
 			
-			request.setAttribute("msg", "Account Registered Succesfully.");
-			request.getRequestDispatcher("Customer-Login.jsp").forward(request, response);
+			if (Email.equals(c.getEmail())) {
+				request.setAttribute("msg", "Account Already Exist with this Email");
+				request.getRequestDispatcher("Customer-Registration.jsp").forward(request, response);
+			} else {
+				Customer c1 = new Customer();
+				c1.setName(request.getParameter("Name"));
+				c1.setContact(Long.parseLong(request.getParameter("Contact")));
+				c1.setAddress(request.getParameter("Address"));
+				c1.setEmail(request.getParameter("Email"));
+				c1.setPassword(request.getParameter("Password"));
+				
+				CustomerDao.insertCustomer(c1);
+				request.setAttribute("msg", "Account Registered Succesfully.");
+				request.getRequestDispatcher("Customer-Login.jsp").forward(request, response);
+			}
 		}
 
 		else if (action.equalsIgnoreCase("Login")) {

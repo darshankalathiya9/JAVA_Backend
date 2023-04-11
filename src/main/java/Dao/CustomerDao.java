@@ -29,6 +29,31 @@ public class CustomerDao {
 		}
 	}
 
+	public static Customer checkEmailForRegistration(String Email) {
+		Customer c1 = null;
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from customer where Email = ?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			
+			pst.setString(1, Email);
+			ResultSet rs = pst.executeQuery();
+			
+			if (rs.next()) {
+				c1 = new Customer();
+				c1.setID(rs.getInt("ID"));
+				c1.setName(rs.getString("Name"));
+				c1.setContact(rs.getLong("Contact"));
+				c1.setAddress(rs.getString("Address"));
+				c1.setEmail(rs.getString("Email"));
+				c1.setPassword(rs.getString("Password"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return c1;
+	}
+	
 	public static Customer loginCustomer(Customer c) {
 		Customer c1 = null;
 		try {

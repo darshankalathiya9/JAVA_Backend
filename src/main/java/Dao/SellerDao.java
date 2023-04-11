@@ -28,6 +28,32 @@ public class SellerDao {
 			e.printStackTrace();
 		}
 	}
+	
+	public static Seller checkEmailForRegistration(String Email) {
+		Seller s1 = null;
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from seller where Email=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			
+			pst.setString(1, Email);
+			ResultSet rs = pst.executeQuery();
+			
+			if (rs.next()) {
+				s1 = new Seller();
+				s1.setID(rs.getInt("ID"));
+				s1.setName(rs.getString("Name"));
+				s1.setContact(rs.getLong("Contact"));
+				s1.setAddress(rs.getString("Address"));
+				s1.setEmail(rs.getString("Email"));
+				s1.setPassword(rs.getString("Password"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return s1;
+	}
+	
 
 	public static Seller LoginSeller(Seller s) {
 		Seller s1 = null;

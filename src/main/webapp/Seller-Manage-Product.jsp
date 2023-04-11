@@ -169,9 +169,9 @@
             <div class="row footer-top">
                 <div class="col-lg-4 footer-grid_section_w3layouts">
                     <h2 class="logo-2 mb-lg-4 mb-3">
-                        <a href="index.html"><span class="fa fa-bold" aria-hidden="true"></span>ootie</a>
+                        <a href="Index.jsp"><span class="fa fa-bold" aria-hidden="true"></span>ootie</a>
                     </h2>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p> You can Purchase good Qulaity shoes from here & for Seller, Sell Awesome Products to Customer by this E-Commerce Platform.</p>
                     <h4 class="sub-con-fo ad-info my-4">Catch on Social</h4>
                     <ul class="w3layouts_social_list list-unstyled">
                         <li>
@@ -203,8 +203,7 @@
                         <p>By subscribing to our mailing list you will always get latest news and updates from us.</p>
                         <form action="#" method="post" class="w3layouts-newsletter">
                             <input type="email" name="Email" placeholder="Enter your email..." required="">
-                            <button class="btn1"><span class="fa fa-paper-plane-o" aria-hidden="true"></span></button>
-
+                            <button class="btn1" name="" value=""><span class="fa fa-paper-plane-o" aria-hidden="true"></span></button>
                         </form>
                     </div>
                     <div class="row mt-lg-4 bottom-w3layouts-sec-nav mx-0">
@@ -212,10 +211,10 @@
                             <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3">Information</h3>
                             <ul class="list-unstyled w3layouts-icons">
                                 <li>
-                                    <a href="index.html">Home</a>
+                                    <a href="Index.jsp">Home</a>
                                 </li>
                                 <li class="mt-3">
-                                    <a href="about.html">About Us</a>
+                                    <a href="#">About Us</a>
                                 </li>
                                 <li class="mt-3">
                                     <a href="#">Gallery</a>
@@ -224,7 +223,7 @@
                                     <a href="#">Services</a>
                                 </li>
                                 <li class="mt-3">
-                                    <a href="contact.html">Contact Us</a>
+                                    <a href="#">Contact Us</a>
                                 </li>
                             </ul>
                         </div>
@@ -241,13 +240,13 @@
                                         <a href="#">Delivery & Returns</a>
                                     </li>
                                     <li class="mt-3">
-                                        <a href="#">Waranty</a>
+                                        <a href="#">Warranty</a>
                                     </li>
                                     <li class="mt-3">
                                         <a href="#">Terms & Condition</a>
                                     </li>
                                     <li class="mt-3">
-                                        <a href="#">Privacy Plolicy</a>
+                                        <a href="#">Privacy Policy</a>
                                     </li>
                                 </ul>
                             </div>
