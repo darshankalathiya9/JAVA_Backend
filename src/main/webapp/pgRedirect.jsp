@@ -19,7 +19,7 @@ parameters.put("INDUSTRY_TYPE_ID",PaytmConstants.INDUSTRY_TYPE_ID);
 parameters.put("WEBSITE",PaytmConstants.WEBSITE);
 parameters.put("MOBILE_NO","9876543210");
 parameters.put("EMAIL","test@gmail.com");
-parameters.put("CALLBACK_URL", "http://localhost:8080/DK_Store/pgResponse.jsp");
+parameters.put("CALLBACK_URL", "http://localhost:8080/Bootie/pgResponse.jsp");
 
 
 String checkSum =  CheckSumServiceHelper.getCheckSumServiceHelper().genrateCheckSum(PaytmConstants.MERCHANT_KEY, parameters);
