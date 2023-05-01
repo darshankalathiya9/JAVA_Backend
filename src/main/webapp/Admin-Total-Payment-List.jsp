@@ -129,7 +129,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<tbody>
 								
 								<% List<Product> list ;%>
-								<% for(Product p : list){ %>
+								<%-- <% for(Product p : list){ %> --%>
 								
 									<tr>
 										<td></td>
@@ -138,7 +138,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<td></td>
 									</tr>
 									
-								<%} %>
+								<%-- <%} %> --%>
 								
 								</tbody>
 							</table>
